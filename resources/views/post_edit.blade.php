@@ -8,8 +8,8 @@
       @include('includes.errors')
 
       {{ Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PATCH']) }}
-        <p>{{ Form::text('title', Input::old('title')) }}</p>
-        <p>{{ Form::textarea('body', Input::old('body'), ['class' => 'textarea-wysiwyg']) }}</p>
+        <p>{{ Form::text('title', old('title')) }}</p>
+        <p>{{ Form::textarea('body', old('body'), ['class' => 'textarea-wysiwyg']) }}</p>
         <p>{{ Form::submit('Save', ['name' => 'submit']) }}</p>
       {{ Form::close() }}
     </div>

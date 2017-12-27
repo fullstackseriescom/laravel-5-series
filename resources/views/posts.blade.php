@@ -7,7 +7,7 @@
         <h3>Posts</h3>
 
         {{ Form::open(['route' => ['posts.index'], 'method' => 'GET']) }}
-          <p>{{ Form::text('search', Input::old('search'), array('placeholder'=>'Search')) }}</p>
+          <p>{{ Form::text('search', old('search'), array('placeholder'=>'Search')) }}</p>
           <p>{{ Form::submit('Search') }}</p>
         {{ Form::close() }}
 
@@ -30,7 +30,7 @@
 
                   <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
               </form>
-            @endif  
+            @endif
         @empty
           <p>No posts</p>
         @endforelse

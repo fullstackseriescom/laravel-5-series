@@ -14,7 +14,7 @@
         @if (Auth::check())
           @include('includes.errors')
           {{ Form::open(['route' => ['comments.store'], 'method' => 'POST']) }}
-          <p>{{ Form::textarea('body', Input::old('body')) }}</p>
+          <p>{{ Form::textarea('body', old('body')) }}</p>
           {{ Form::hidden('post_id', $post->id) }}
           <p>{{ Form::submit('Send') }}</p>
         {{ Form::close() }}
